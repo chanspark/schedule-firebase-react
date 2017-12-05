@@ -49,6 +49,7 @@
     "body-parser": "^1.17.1",
     "compression": "^1.6.2",
     "express": "^4.15.2",
+    "firebase": "^4.7.0",
     "ignore-styles": "^5.0.1",
     "morgan": "^1.8.1",
     "react": "^15.5.4",
@@ -64,7 +65,8 @@
     "now-start": "NODE_ENV=production node server/index.js",
     "build": "cross-env NODE_PATH=src node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "deploy": "cross-env NODE_PATH=src node scripts/build.js && firebase deploy"
+    "deploy": "cross-env NODE_PATH=src node scripts/build.js && firebase deploy",
+    "firebase": "cross-env NODE_PATH=src node scripts/build.js && firebase serve"
   },
   "jest": {
     "collectCoverageFrom": [

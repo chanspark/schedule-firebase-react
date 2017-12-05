@@ -1,11 +1,11 @@
-# Chans' react starter kit
--------------------
+# React + Firebase 연동 실시간 상담 예약 웹앱
 
-## Origin
-I used CRA starter kit made by [ayroblu](https://github.com/ayroblu), which enable Redux, Express and SSR on react app created by CRA.  
-Checkout [the original repository](https://github.com/ayroblu/ssr-create-react-app-v2). 
+## Introduction
+리액트와 파이어베이스를 연습해보기위해 간단한 실시간 상담 예약 웹앱을 제작하게 되었습니다.  
+리액트 스타터킷은 [여기](https://github.com/chanspark/react-starter)를 참고 하였습니다.  
+본 프로젝트를 제작하는 [과정은 제 블로그 포스트](https://chanspark.github.io/)에서 확인할 수 있습니다.
 
-## Install
+## Develop
 ```
 npm install
 ```
@@ -15,21 +15,15 @@ Development Mode
 yarn start
 ```
 
-Production build & SSR test
+Production build & firebase serve
 ```
-yarn run build
-yarn run start:server
+yarn run firebase
 ```
 
-## Tech Stack
-1. react
-2. react-router
-3. redux
-4. express
-5. server side rendering 
-6. react hot loader
-7. code splitting
-8. sass
+Production build & firebase deploy
+```
+yarn run deploy
+```
 
 
 
