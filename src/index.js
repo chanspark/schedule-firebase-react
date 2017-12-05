@@ -1,19 +1,40 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-// import * as firebase from 'firebase';
-import registerServiceWorker from './registerServiceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
 
-// const config = {
-//     apiKey: "AIzaSyAJ67oi94nEMmlfGFWllVRB0Q8rdmH3yUg",
-//     authDomain: "happykids-schedule.firebaseapp.com",
-//     databaseURL: "https://happykids-schedule.firebaseio.com",
-//     projectId: "happykids-schedule",
-//     storageBucket: "happykids-schedule.appspot.com",
-//     messagingSenderId: "74310977451"
-//   };
-//   firebase.initializeApp(config);
+import configureStore from './store'
+import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import App from './shared/App'
+import './index.scss'
+
+import { AppContainer } from 'react-hot-loader';
+
+// Let the reducers handle initial state
+const initialState = {}
+const store = configureStore(initialState)
+
+const render = Component => {
+  ReactDOM.render(
+    <AppContainer>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Component />
+      </BrowserRouter>
+    </Provider>
+    </AppContainer>
+  , document.getElementById('root')
+  )
+  
+}
+
+
+
+render(App)
+
+if (module.hot) {
+  module.hot.accept('./shared/App', () => { render(App) })
+}
+
+registerServiceWorker()
