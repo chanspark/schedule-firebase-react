@@ -7,13 +7,12 @@ import NoMatch from 'components/NoMatch'
 import { fire, getFireDB } from 'shared/Firebase'
 
 export default class App extends Component {
-  constructor(props) {
-      super(props);
+  constructor() {
+      super();
       this.state = {
         memo: []
       };
       fire();
-      
   }
 
   componentDidMount() {
@@ -32,10 +31,8 @@ export default class App extends Component {
     
     return (
       <div>
-        {/* <h1>Server Side Rendering with Create React App v2</h1> */}
         <Switch>
           {/* <Route exact path="/" component={FirstPage} memo={memo}/> */}
-          
           <Route exact path="/" render={()=><FirstPage memo={memo}/>}/>
           <Route path="/second" component={SecondPage}/>
           <Route component={NoMatch}/>

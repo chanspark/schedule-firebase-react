@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 import * as userActions from 'actions/user'
 import { Link } from 'react-router-dom'
 // import './FirstPage.css'
-import { getSectionsDB } from 'shared/Firebase'
+// import { getSectionsDB } from 'shared/Firebase'
 
 class FirstPage extends Component {
 	
@@ -32,11 +32,11 @@ class FirstPage extends Component {
     // const b64 = this.props.staticContext ? 'wait for it' : window.btoa('wait for it')
     return (
       <div>
-        <h1>상담예약</h1>
+        <h1>Schedule</h1>
 		{memo.length ? (
 			<p>{memo[0].title}</p>
 		) : (
-			false
+			<p className="loading"></p>
 		)}
 		{/* <p>{memo ? memo[0].title : false}</p> */}
 		{/* <p>{`Title: ${memo[0].title}`}</p> */}
