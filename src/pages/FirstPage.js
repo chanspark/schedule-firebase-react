@@ -8,22 +8,6 @@ import { Link } from 'react-router-dom'
 // import { getSectionsDB } from 'shared/Firebase'
 
 class FirstPage extends Component {
-	
-	// constructor() {
-	// 	super();
-	// 	// this.state = {
-	// 	// 	memo: []
-	// 	// }
-	// 	// getSectionsDB()
-	// 	// .then(res =>{
-	// 	// 	this.setState({
-	// 	// 		memo : res.val().memos
-	// 	// 	})
-	// 	// }
-	// 	// )
-	// }
-
-
   render() {
 	const {
 		memo
@@ -38,10 +22,7 @@ class FirstPage extends Component {
 		) : (
 			<p className="loading"></p>
 		)}
-		{/* <p>{memo ? memo[0].title : false}</p> */}
-		{/* <p>{`Title: ${memo[0].title}`}</p> */}
-        {/* <p>{`Email: ${this.props.user.email}`}</p> */}
-		{/* <p>{`b64: ${b64}`}</p> */}
+		
 		
         <Link to={'/second'}>Second</Link>
       </div>
